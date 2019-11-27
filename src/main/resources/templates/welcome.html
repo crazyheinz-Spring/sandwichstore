@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Welcome sandwich lovers!</h1>
+</div>
+
+<div class="container">
+    <h1>give in username to start</h1>
+    <form class="form-horizontal" method="post" th:action="@{/welcome}" th:object="${newCustomer}">
+        <input type="hidden" th:field="*{id}"/>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" th:field="*{name}"/>
+            </div>
+        </div>
+
+
+        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+</body>
+
+</html>
